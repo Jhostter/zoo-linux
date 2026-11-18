@@ -1,0 +1,56 @@
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;overflow:hidden;background:#07090d;font-family:ui-monospace,"JetBrains Mono","Fira Code",SFMono-Regular,Menlo,Consolas,monospace}
+body.transparent{background:transparent}
+#gl{position:fixed;inset:0;width:100%;height:100%;display:block}
+
+/* ---- única capa 2D: una terminal sin bordes ni caja, que deja respirar al 3D ---- */
+#term{position:fixed;left:0;bottom:0;width:min(62vw,980px);padding:6vh 2.2vw 2.4vh 2vw;pointer-events:none;
+  background:linear-gradient(to top right,rgba(0,0,0,.78) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,0) 100%);
+  font-size:clamp(11px,1.1vw,19px);line-height:1.5;font-weight:600;color:#6dff9a;text-shadow:0 0 7px rgba(60,255,130,.55)}
+#term .l{white-space:pre-wrap;word-break:break-word;opacity:.92}
+#term .l:nth-last-child(n+6){opacity:.35}#term .l:nth-last-child(n+8){display:none}
+#term .l:last-child::after{content:"█";margin-left:.25em;animation:cur 1s steps(1) infinite}
+#term .boss{color:#ff8f8f;text-shadow:0 0 7px rgba(255,70,70,.6)}
+#term .err{color:#ffb454;text-shadow:0 0 7px rgba(255,150,40,.6)}
+#term .ok{color:#8bffd0}
+@keyframes cur{50%{opacity:0}}
+@media (max-width:760px){#term{width:100vw;font-size:11px}}
+
+/* ---- barra de control del jefe (?control=1): herramienta del operador, fuera de la escena ---- */
+#ctl{position:fixed;left:0;right:0;top:0;display:flex;gap:8px;padding:10px;background:#0c0e12;z-index:20;align-items:center}
+#ctl[hidden]{display:none}
+#ctl input{flex:1;font:16px system-ui;padding:9px 12px;border-radius:8px;border:1px solid #444;background:#1b1f27;color:#fff}
+#ctl select{font:14px system-ui;padding:8px;border-radius:8px;background:#1b1f27;color:#fff;border:1px solid #444;max-width:190px}
+#ctl button{font:600 15px system-ui;padding:9px 14px;border-radius:8px;border:0;cursor:pointer}
+#ctl .o{background:#f5b301}#ctl .w{background:#d92d20;color:#fff}
+#cmsg{color:#f5b301;font:14px system-ui}
+body.ctl #term{bottom:0}
+
+/* ---- interacción (solo en ?control=1 o ?interact=1): ficha del agente con el mismo estilo de terminal, sin cajas ---- */
+body.ix #gl{cursor:grab}body.ix #gl.over{cursor:pointer}body.ix #gl.drag{cursor:grabbing}
+body.ix #term{width:min(46vw,760px)}
+#insp{position:fixed;right:0;bottom:0;width:min(38vw,520px);max-height:78vh;overflow:auto;padding:5vh 2vw 2.4vh 3vw;
+  background:linear-gradient(to top left,rgba(0,0,0,.84) 0%,rgba(0,0,0,.62) 55%,rgba(0,0,0,0) 100%);
+  font-size:clamp(11px,1vw,16px);line-height:1.55;font-weight:600;color:#6dff9a;text-shadow:0 0 7px rgba(60,255,130,.5);z-index:15}
+#insp[hidden]{display:none}
+#insp h3{font-size:1.25em;letter-spacing:.04em;margin-bottom:.35em;color:#e9ffe9}
+#insp .k{display:inline-block;width:7.2em;color:#4fbf79;font-weight:600}
+#insp .v{color:#b8ffd0;word-break:break-word}
+#insp .dim{opacity:.6}#insp .warn{color:#ffb454}#insp .bad{color:#ff8f8f}
+#insp .bar{letter-spacing:-.05em}
+#insp .acts{margin-top:.8em;display:flex;flex-wrap:wrap;gap:.1em .9em}
+#insp .acts+.acts{margin-top:.2em}
+#insp button.t,#insp a.t{font:inherit;color:#6dff9a;background:none;border:0;padding:0;cursor:pointer;text-shadow:inherit;text-decoration:none}
+#insp button.t::before,#insp a.t::before{content:"[ "}#insp button.t::after,#insp a.t::after{content:" ]"}
+#insp button.t:hover,#insp a.t:hover{color:#fff;text-decoration:underline}
+#insp button.t:disabled{opacity:.3;cursor:not-allowed;text-decoration:none;color:#6dff9a}
+#insp button.t.red{color:#ff8f8f}
+#insp form{margin-top:.6em;display:flex;gap:.6em}
+#insp input{flex:1;font:inherit;color:#e9ffe9;background:rgba(0,0,0,.6);border:0;border-bottom:1px solid #4fbf79;padding:.25em .1em;outline:none}
+#insp .msg{margin-top:.5em;min-height:1.4em;color:#ffd45e}
+#term .chat{color:#b9a8ff;text-shadow:0 0 7px rgba(150,120,255,.6)}
+#chint,#cchat{color:#8b94a7;font:12px system-ui;white-space:nowrap}
+@media (max-width:760px){#insp{width:100vw;max-height:60vh}body.ix #term{width:100vw}}
+
+#insp .bossform{flex-wrap:wrap;align-items:center}
+#insp .bossform input{flex-basis:100%}

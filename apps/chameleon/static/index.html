@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chameleon</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%8E%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/zoo-theme.css"><link rel="stylesheet" href="/style.css"></head><body>
+<div class="app">
+  <aside class="side">
+    <div class="brand"><span class="logo">🦎</span><div><b>Chameleon</b><div class="sub">hardware y sensores · ZOO</div></div></div>
+    <nav id="nav"></nav>
+    <div class="grow"></div>
+    <div class="mini" id="mini"></div>
+    <div class="hint"><kbd>Esc</kbd> cerrar</div>
+  </aside>
+  <main id="main"><div id="view"></div></main>
+</div>
+<dialog id="dlg"><form method="dialog"><h3 id="dtitle"></h3><div id="dbody"></div><div id="typed" hidden><label>Escribe <b id="typedname"></b> para confirmar<input id="typedin" autocomplete="off" spellcheck="false"></label></div><div class="row-end" style="flex-direction:row-reverse"><button class="btn p" id="dok" value="yes">Aceptar</button><button class="btn ghost" value="no">Cancelar</button></div></form></dialog>
+<div id="toasts"></div>
+<script src="/app.js"></script></body></html>

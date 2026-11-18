@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ant · agentes de Antigravity</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐜</text></svg>">
+<link rel="stylesheet" href="/style.css">
+<script>try{var t=JSON.parse(localStorage.getItem("ant:theme"));if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="sr" href="#main" onclick="document.getElementById('main').focus();return false">Saltar al contenido</a>
+<div id="offline" role="alert">Sin conexión con el servicio de Ant. Reintentando…</div>
+<div class="app">
+  <aside class="side">
+    <a class="brand" href="#/" aria-label="Ant, inicio"><span class="logo">🐜</span><span>Ant</span></a>
+    <nav class="nav" id="nav" aria-label="Principal"></nav>
+    <div class="foot">
+      <span class="conn" title="Conexión con el servicio"></span><span class="t">Conectado</span><span class="sp"></span>
+      <button class="btn ghost sm" id="theme" aria-label="Cambiar tema" title="Tema: automático / claro / oscuro">🌓</button>
+      <button class="btn ghost sm" id="help" aria-label="Atajos de teclado" title="Atajos de teclado (?)">⌨️</button>
+    </div>
+  </aside>
+  <main class="main" id="main" tabindex="-1"></main>
+</div>
+<div id="toasts" aria-live="polite"></div>
+<script src="/lib.js"></script>
+<script src="/views.js"></script>
+<script src="/swarm.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

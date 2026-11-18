@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Horse Pack</title><link rel="stylesheet" href="/zoo-theme.css"><link rel="stylesheet" href="/style.css"></head><body>
+<div class="app">
+  <aside class="side">
+    <div class="brand"><span class="logo">🐴</span><b>Horse Pack</b></div>
+    <nav id="nav"></nav>
+    <div class="grow"></div>
+    <div class="tools" id="tools"></div>
+    <div class="hint"><kbd>/</kbd> buscar · <kbd>Esc</kbd> cerrar</div>
+  </aside>
+  <main>
+    <header class="top">
+      <label class="search"><span id="sicon"></span><input id="q" type="search" placeholder="Buscar paquetes…" autocomplete="off" spellcheck="false"></label>
+      <div class="seg" id="srcseg" title="Origen de los paquetes"></div><label class="lbl" id="rtlbl" hidden><input type="checkbox" id="rt"> runtimes</label><select id="group" title="Agrupar"><option value="type">Por tipo</option><option value="section">Por sección</option><option value="none">Sin agrupar</option></select><select id="sort" title="Ordenar"><option value="name">Nombre</option><option value="size">Tamaño</option></select>
+      <button class="sw" id="auto" role="switch" aria-checked="true" title="Recarga las listas cuando los paquetes cambien"><i></i><span>Auto</span></button><button class="btn ghost" id="reload" title="Recargar"></button>
+    </header>
+    <div class="content" id="content">
+      <section id="inst" hidden>
+        <div class="drop" id="drop" tabindex="0">
+          <div class="drop-i" id="dropi"></div>
+          <div><b>Arrastra un archivo aquí</b> o <u>elige uno</u></div>
+          <div class="mut">.deb · .tar.gz/.xz/.bz2/.zst · .zip · .AppImage</div>
+          <input type="file" id="file" hidden accept=".deb,.tar,.gz,.tgz,.xz,.txz,.bz2,.tbz2,.zst,.lz,.zip,.AppImage,.appimage">
+        </div>
+        <div class="opts" id="opts" hidden>
+          <div class="fname" id="fname"></div>
+          <div class="seg" id="scope"><button data-v="user" class="on">Usuario <small>sin root</small></button><button data-v="system">Sistema <small>root</small></button></div>
+          <input id="appname" placeholder="Nombre (opcional)">
+          <button class="btn p" id="instfile">Instalar</button>
+        </div>
+        <div class="bar" id="upbar" hidden><i id="upfill"></i></div>
+        <h3 class="sec">Instalados desde archivo</h3>
+      </section>
+      <div id="msg" class="msg"></div>
+      <div id="list" class="list"></div>
+    </div>
+  </main>
+  <aside class="drawer" id="drawer" hidden></aside>
+</div>
+<div class="bulk" id="bulk" hidden></div>
+<section class="console" id="console" hidden>
+  <header><span class="dot" id="cdot"></span><b id="ctitle"></b><span class="grow"></span><button class="btn ghost sm" id="cmin">Minimizar</button><button class="btn ghost sm" id="cclose">Cerrar</button></header>
+  <pre id="log"></pre>
+</section>
+<div id="toasts"></div>
+<dialog id="dlg"><form method="dialog"><h3 id="dtitle"></h3><p id="dtext"></p><div class="row-end"><button class="btn ghost" value="no">Cancelar</button><button class="btn" id="dextra" value="extra" hidden></button><button class="btn p" id="dok" value="yes">Aceptar</button></div></form></dialog>
+<script src="/app.js"></script></body></html>

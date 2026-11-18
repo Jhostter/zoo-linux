@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ZOO Linux</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/zoo-theme.css"><link rel="stylesheet" href="/style.css"></head><body>
+<div class="shell" id="shell">
+  <aside class="rail" id="rail">
+    <div class="rbrand"><span class="logo">🐾</span><div class="rtxt"><b>ZOO Linux</b><div class="sub">tu suite para Linux</div></div></div>
+    <nav id="rnav" aria-label="Secciones"></nav>
+    <div class="rsec">Herramientas</div>
+    <nav id="rapps" aria-label="Herramientas"></nav>
+    <div class="grow"></div>
+    <div class="rfoot" id="chips"></div>
+    <button class="rb" id="collapse" title="Reducir o ampliar la barra"><span class="ic">«</span><span class="l">Reducir barra</span></button>
+  </aside>
+  <section class="stage">
+    <div class="bar" id="bar" hidden></div>
+    <main id="main">
+      <div id="banner" class="banner" hidden></div>
+      <section id="v-panel" hidden></section>
+      <section id="v-maint" hidden></section>
+      <section id="v-apps" hidden><div id="appsbox"></div><div id="grid" class="grid" aria-live="polite"></div></section>
+      <section id="v-feed" hidden></section>
+      <section id="v-modes" hidden></section>
+    </main>
+    <div class="frame" id="frame" hidden><iframe id="appframe" title="Herramienta" allow="clipboard-write; fullscreen"></iframe><div class="ph" id="ph" hidden></div></div>
+  </section>
+</div>
+<aside class="drawer" id="drawer" hidden>
+  <header><b id="dtitle"></b><span class="grow"></span><button class="btn ghost sm" id="dclose">Cerrar</button></header>
+  <pre id="dlog"></pre>
+</aside>
+<dialog id="add"><form method="dialog" id="addform">
+  <h3>Añadir una app a la suite</h3>
+  <p class="mut">Registra un servicio systemd de usuario que sirva una web local. Se guarda en <code id="cfgdir"></code>.</p>
+  <label>Nombre<input name="name" required maxlength="40" placeholder="Elephant Clean"></label>
+  <div class="two"><label>Emoji<input name="emoji" maxlength="8" placeholder="🐘" value="🐾"></label><label>Categoría<input name="category" maxlength="30" placeholder="Sistema"></label></div>
+  <label>Descripción<input name="tagline" maxlength="160" placeholder="Qué hace, en una frase"></label>
+  <div class="two"><label>Puerto<input name="port" type="number" min="1" max="65535" required placeholder="4477"></label><label>Servicio systemd<input name="service" required maxlength="80" placeholder="elephant-clean"></label></div>
+  <label>Carpeta (opcional)<input name="dir" maxlength="200" placeholder="~/elephant-clean"></label>
+  <div class="err" id="adderr"></div>
+  <div class="row-end"><button class="btn ghost" value="cancel" formnovalidate>Cancelar</button><button class="btn p" id="addok" value="ok">Añadir</button></div>
+</form></dialog>
+<dialog id="mres"><form method="dialog"><h3 id="mrt"></h3><ul class="steps" id="mrs"></ul><div id="mrc"></div><div class="row-end"><button class="btn p" value="ok">Cerrar</button></div></form></dialog>
+<div id="toasts"></div>
+<script src="/app.js"></script></body></html>

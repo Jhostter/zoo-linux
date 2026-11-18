@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Oficina del Prompt</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>">
+<link rel="stylesheet" href="/office.css">
+</head>
+<body>
+<canvas id="gl"></canvas>
+<div id="term" role="log" aria-live="polite" aria-label="Registro de la oficina"></div>
+<aside id="insp" hidden aria-label="Ficha del agente"></aside>
+<form id="ctl" hidden>
+  <select id="cws" title="Workspace"></select>
+  <input id="ctask" placeholder="Orden del jefe… (Ant elige el agente, el modelo y el presupuesto)" autocomplete="off">
+  <button class="o" type="submit">📣 ¡A trabajar!</button>
+  <button class="w" type="button" id="cwhip">🔥 Látigo</button>
+  <button class="w" type="button" id="cwhipall">🔥🔥 A todos</button>
+  <button class="w" type="button" id="csnd" title="Sonidos sintetizados: látigo, explosiones, aplausos…">🔊 Sonido</button>
+  <button class="w" type="button" id="ccam" title="Cámara automática: enfoca el látigo, las explosiones y las entregas">🎥 Cámara auto</button>
+  <span id="cmsg"></span>
+  <span id="chint">Clic en un agente · arrastra para girar · rueda para acercar · Esc para volver</span> <span id="cchat"></span>
+</form>
+<script type="module" src="/office.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "${{ matrix.python }}" }
+      - name: Syntax
+        run: python -m compileall -q zoo apps
+      - name: Shell scripts
+        run: |
+          for f in install.sh uninstall.sh $(find . -name '*.sh'); do bash -n "$f"; done
+          ./install.sh --list
+          ./install.sh --dry-run
+      - name: Smoke (normal)
+        run: python test/smoke.py
+      - name: Smoke (empty PATH)
+        run: python test/smoke.py --bare

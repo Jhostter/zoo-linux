@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bee</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%9D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/zoo-theme.css"><link rel="stylesheet" href="/style.css"></head><body>
+<div class="app">
+  <aside class="side">
+    <div class="brand"><span class="logo">🐝</span><div><b>Bee</b><div class="sub">systemd · ZOO Linux</div></div></div>
+    <div class="seg" id="scope"><button data-v="user">Usuario</button><button data-v="system">Sistema</button></div>
+    <nav id="nav"></nav>
+    <div class="grow"></div>
+    <button class="tool" id="reloadd" title="systemctl daemon-reload">⟲ Recargar systemd</button>
+    <div class="hint"><kbd>/</kbd> buscar · <kbd>Esc</kbd> cerrar</div>
+  </aside>
+  <main>
+    <header class="top" id="topbar">
+      <label class="search"><span>🔎</span><input id="q" type="search" placeholder="Buscar…" autocomplete="off" spellcheck="false"></label>
+      <select id="sort" title="Ordenar"><option value="name">Nombre</option><option value="state">Estado</option><option value="mem">Memoria</option></select>
+      <button class="btn p" id="create">+ Crear servicio</button>
+      <button class="btn ghost" id="reload" title="Recargar">↻</button>
+    </header>
+    <div class="chips" id="chips"></div>
+    <div class="content" id="content"><div id="msg" class="msg"></div><div id="list"></div></div>
+  </main>
+</div>
+<div class="bulk" id="bulk" hidden></div>
+<aside class="drawer" id="drawer" hidden></aside>
+<dialog id="newdlg"><form method="dialog" id="newform">
+  <h3 id="newtitle">Crear servicio de usuario</h3>
+  <p class="mut">Se guarda en <code>~/.config/systemd/user</code>. No necesita permisos de administrador.</p>
+  <label>Nombre<input name="name" required maxlength="41" placeholder="mi-app" pattern="[a-z0-9][a-z0-9\-]*"></label>
+  <label>Descripción<input name="description" maxlength="120" placeholder="Qué hace"></label>
+  <label>Comando (ExecStart)<input name="exec" required placeholder="/usr/bin/python3 /home/usuario/mi-app/server.py"></label>
+  <div class="two"><label>Carpeta de trabajo (opcional)<input name="workdir" placeholder="~/mi-app"></label>
+  <label>Reinicio<select name="restart"><option value="on-failure">Si falla</option><option value="always">Siempre</option><option value="no">Nunca</option></select></label></div>
+  <label class="chk"><input type="checkbox" name="start" checked><span id="startlbl">Habilitar y arrancar ahora</span></label>
+  <div class="err" id="newerr"></div>
+  <div class="row-end"><button class="btn ghost" value="cancel" formnovalidate>Cancelar</button><button class="btn p" value="ok" id="newok">Crear</button></div>
+</form></dialog>
+<dialog id="dlg"><form method="dialog"><h3 id="dtitle"></h3><p id="dtext"></p>
+  <div id="typed" hidden><label>Escribe <b id="typedname"></b> para confirmar<input id="typedin" autocomplete="off" spellcheck="false"></label></div>
+  <div class="row-end"><button class="btn ghost" value="no">Cancelar</button><button class="btn p" id="dok" value="yes">Aceptar</button></div></form></dialog>
+<dialog id="gdlg"><form method="dialog" id="gform"><h3 id="gtitle"></h3><div id="gbody"></div><div class="err" id="gerr"></div>
+  <div class="row-end" style="flex-direction:row-reverse"><button class="btn p" value="ok" id="gok">Aceptar</button><button class="btn ghost" value="cancel" formnovalidate>Cerrar</button></div></form></dialog>
+<div id="toasts"></div>
+<script src="/app.js"></script></body></html>

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "docker-kong",
+    "name": "Docker Kong",
+    "emoji": "🐵",
+    "tagline": "Gestor local de Docker: contenedores, logs, Compose y alertas.",
+    "category": "Contenedores",
+    "port": 4455,
+    "service": "docker-gestor",
+    "dir": ""
+  },
+  {
+    "id": "horse-pack",
+    "name": "Horse Pack",
+    "emoji": "🐴",
+    "tagline": "Gestor de paquetes nativos: apt/dpkg, archivos .deb/.tar/.AppImage y procesos de apt.",
+    "category": "Sistema",
+    "port": 4466,
+    "service": "gestor-paquetes",
+    "dir": "../apps/horse-pack"
+  },
+  {
+    "id": "elephant",
+    "name": "Elephant",
+    "emoji": "🐘",
+    "tagline": "Limpiador de disco: cachés, papelera, logs, kernels antiguos y explorador de espacio.",
+    "category": "Sistema",
+    "port": 4477,
+    "service": "elephant",
+    "dir": "../apps/elephant"
+  },
+  {
+    "id": "bee",
+    "name": "Bee",
+    "emoji": "🐝",
+    "tagline": "Gestor de servicios systemd: estado, logs en vivo, acciones y asistente para crear servicios.",
+    "category": "Sistema",
+    "port": 4488,
+    "service": "bee",
+    "dir": "../apps/bee"
+  },
+  {
+    "id": "beaver",
+    "name": "Beaver",
+    "emoji": "🦫",
+    "tagline": "Gestor de memoria y swap: consumo por aplicación, zram, swappiness, presión de memoria y límites por servicio.",
+    "category": "Sistema",
+    "port": 4499,
+    "service": "beaver",
+    "dir": "../apps/beaver"
+  },
+  {
+    "id": "chameleon",
+    "name": "Chameleon",
+    "emoji": "🦎",
+    "tagline": "Sensores y hardware: temperaturas, GPU NVIDIA, batería, perfiles de energía e inventario.",
+    "category": "Sistema",
+    "port": 4500,
+    "service": "chameleon",
+    "dir": "../apps/chameleon"
+  },
+  {
+    "id": "ant",
+    "name": "Ant",
+    "emoji": "🐜",
+    "tagline": "Panel de agentes de Antigravity: enjambres, lanzador, historial y oficina 3D para streaming.",
+    "category": "Agentes",
+    "port": 4511,
+    "service": "ant",
+    "dir": "../apps/ant"
+  }
+]

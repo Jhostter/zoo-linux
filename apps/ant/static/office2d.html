@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Oficina del Prompt</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>">
+<link rel="stylesheet" href="/office2d.css">
+</head>
+<body>
+<div id="stage">
+  <header>
+    <div class="brand"><span>💼</span><h1 id="title">La Oficina del Prompt</h1></div>
+    <div class="sub" id="sub">Cubículos Virtuales · agentes de IA trabajando en vivo</div>
+    <div class="live"><i></i> EN VIVO</div>
+  </header>
+  <div id="cubes"></div>
+  <svg id="whipfx" viewBox="0 0 1920 1080"></svg>
+  <footer>
+    <div id="boss">
+      <div id="bossbubble" class="bubble"></div>
+      <svg viewBox="0 0 300 260" id="bosssvg">
+        <g class="b-person">
+          <rect class="b-suit" x="90" y="120" width="120" height="100" rx="34"/>
+          <path class="b-shirt" d="M138 120 L150 160 L162 120Z"/>
+          <path class="b-tie" d="M146 128 L154 128 L158 190 L150 200 L142 190Z"/>
+          <circle class="b-skin" cx="150" cy="86" r="38"/>
+          <path class="b-hair" d="M112 80 Q150 30 188 80 Q172 62 150 64 Q128 62 112 80Z"/>
+          <path class="b-brow" d="M126 76 L144 84 M174 76 L156 84" />
+          <circle cx="136" cy="92" r="4.5" fill="#222"/><circle cx="164" cy="92" r="4.5" fill="#222"/>
+          <path class="b-mouth" d="M134 112 Q150 100 166 112"/>
+          <g class="b-armL"><rect class="b-suit" x="76" y="140" width="26" height="70" rx="13"/></g>
+          <g id="armR"><rect class="b-suit" x="198" y="132" width="26" height="62" rx="13" transform="rotate(-25 211 140)"/>
+            <circle class="b-skin" cx="226" cy="132" r="11"/>
+            <path d="M232 128 Q262 90 292 120" class="b-whiphandle"/></g>
+        </g>
+        <rect class="b-desk" x="10" y="196" width="280" height="64" rx="8"/>
+        <rect class="b-plate" x="95" y="214" width="110" height="28" rx="4"/>
+        <text x="150" y="234" text-anchor="middle" class="b-name">EL JEFE</text>
+      </svg>
+    </div>
+    <div id="ticker"></div>
+    <div id="stats"></div>
+  </footer>
+</div>
+<form id="ctl" hidden>
+  <select id="cws" title="Workspace"></select>
+  <select id="cmodel" title="Modelo"></select>
+  <select id="cmode" title="Modo"><option value="plan">plan (solo lee)</option><option value="accept-edits">accept-edits (edita)</option></select>
+  <input id="ctask" placeholder="Orden del jefe…" autocomplete="off">
+  <button class="o" type="submit">📣 ¡A trabajar!</button>
+  <button class="w" type="button" id="cwhip">🔥 Látigo</button>
+  <button class="w" type="button" id="cwhipall">🔥🔥 A todos</button>
+  <span id="cmsg"></span>
+</form>
+<script src="/office2d.js"></script>
+</body>
+</html>

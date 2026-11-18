@@ -1,0 +1,22 @@
+/* ZOO Linux · tema compartido de toda la suite.
+   Se edita SOLO aquí (zoo-linux/static/zoo-theme.css). `scripts/sync-theme.sh` lo copia a cada app, que lo carga antes de su style.css.
+   Cada app solo define su acento (--acc, --accfg) y lo que es suyo. */
+:root{
+  --bg:#0f1115;--side:#14171c;--panel:#171a20;--hover:#1e232b;--line:#272c35;--fg:#e8eaee;--mut:#8a93a2;
+  --ok:#3ecf8e;--warn:#f5b942;--hot:#f58a42;--bad:#f0616d;--info:#3987e5;
+  --s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#9085e9;
+  --acc:#ff9f43;--accfg:#1a1200;--r:14px;
+}
+@media(prefers-color-scheme:light){:root{
+  --bg:#f4f5f7;--side:#fff;--panel:#fff;--hover:#f0f2f5;--line:#e2e5ea;--fg:#1b2027;--mut:#6a7380;
+  --ok:#12a36a;--warn:#c98500;--hot:#d96a18;--bad:#d63c4a;--info:#2a78d6;
+  --s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#6250d6;
+  --acc:#e8820c;--accfg:#fff;
+}}
+*{box-sizing:border-box}[hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+::selection{background:color-mix(in srgb,var(--acc) 35%,transparent)}
+*{scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+/* Dentro del marco de ZOO Linux (iframe): sin la cabecera de marca, que ya la pone el marco */
+html.embedded .brand{display:none}
+html.embedded .side .hint{display:none}
