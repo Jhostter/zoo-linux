@@ -7,7 +7,7 @@ hybrid laptop. This page says honestly what that means elsewhere. "Verified" = e
 | Need | Why | Verified |
 |---|---|---|
 | Linux + **systemd user session** | Apps run as `systemctl --user` services | yes (Pop!_OS) |
-| **Python ≥ 3.9** | Uses `str.removesuffix` etc.; no third-party packages | 3.12 only — older versions untested |
+| **Python ≥ 3.9** | Uses `str.removesuffix` etc.; no third-party packages | CI runs the smoke tests on 3.9 and 3.12 (ubuntu-24.04); desktop use only on 3.12 |
 | A browser | The UI is a local web page | Chrome/Chromium |
 
 Without systemd you can still run any app by hand (`python3 apps/<app>/server.py`); the launcher's start/stop will not work.
