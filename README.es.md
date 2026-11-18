@@ -47,6 +47,20 @@ escucha en tu propio equipo y las apps cuestan casi nada en reposo.
 > probaron con binarios falsos. Estas herramientas pueden borrar archivos y parar servicios: **lee lo que hace una acción antes de confirmarla.**
 > Detalles en [docs/PORTABILITY.md](docs/PORTABILITY.md).
 
+## 🐜 La oficina animada de Ant
+
+[Ant](apps/ant/) puede mostrar tus agentes de Antigravity como empleados en una oficina 3D pensada para OBS/stream: teclean, se cansan,
+entran en pánico, celebran, se mandan aviones de papel y el jefe pasea con un látigo. Es WebGL en tiempo real (Three.js incluido),
+con **tres estilos visuales que cambias desde Ant** (🎨 *Estilo de la oficina*): OBS recoge el cambio solo.
+
+<div align="center">
+<img src="docs/screenshots/ant-office-cyber.webp" width="80%" alt="Oficina cyberpunk animada: el jefe da un latigazo a un agente">
+<br><sub>Estilo cyberpunk (animación: el látigo del jefe, a cámara lenta).</sub>
+<br><br>
+<img src="docs/screenshots/ant-office-voxel.jpg" width="32%" alt="Estilo voxel"> <img src="docs/screenshots/ant-office-toon.jpg" width="32%" alt="Estilo toon"> <img src="docs/screenshots/ant-office-cyber.jpg" width="32%" alt="Estilo cyberpunk">
+<br><sub><b>Voxel</b> (tipo Minecraft) · <b>Toon</b> (contornos, colores planos) · <b>Cyberpunk</b> (neón, bloom, grano) — datos de ejemplo</sub>
+</div>
+
 ## Inicio rápido
 
 Necesitas Linux con **systemd** (sesión de usuario) y **Python ≥ 3.9**. Nada más que instalar.

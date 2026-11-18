@@ -47,6 +47,20 @@ machine at a glance. Every panel only listens on your own computer, and the apps
 > privileged actions (`pkexec`) have only been tested against fake binaries. These tools can delete files and stop
 > services: **read what an action does before confirming it.** Details in [docs/PORTABILITY.md](docs/PORTABILITY.md).
 
+## 🐜 Ant's animated stream office
+
+[Ant](apps/ant/) can show your Antigravity agents as little employees in a 3D office meant for OBS/streaming: they type, get
+tired, panic, celebrate, send paper planes to each other, and the boss walks around with a whip. It is real-time WebGL
+(Three.js, vendored), with **three visual styles you switch from inside Ant** (🎨 *Office style*) — OBS picks the change up by itself.
+
+<div align="center">
+<img src="docs/screenshots/ant-office-cyber.webp" width="80%" alt="Animated cyberpunk office: the boss cracks the whip at an agent">
+<br><sub>Cyberpunk style (animation: the boss's whip, slowed down).</sub>
+<br><br>
+<img src="docs/screenshots/ant-office-voxel.jpg" width="32%" alt="Voxel style"> <img src="docs/screenshots/ant-office-toon.jpg" width="32%" alt="Toon style"> <img src="docs/screenshots/ant-office-cyber.jpg" width="32%" alt="Cyberpunk style">
+<br><sub><b>Voxel</b> (Minecraft-like) · <b>Toon</b> (outlines, flat colors) · <b>Cyberpunk</b> (neon, bloom, film grain) — demo data</sub>
+</div>
+
 ## Quick start
 
 You need Linux with **systemd** (user session) and **Python ≥ 3.9**. Nothing else to install.
